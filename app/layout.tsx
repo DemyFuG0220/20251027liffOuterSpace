@@ -23,12 +23,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const liffId = "2008362900-W5lMxX4m"; // 將 LIFF ID 集中管理
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <LiffProvider liffId={liffId}>{children}</LiffProvider>
+        <LiffProvider>{children}</LiffProvider>
       </body>
     </html>
   );

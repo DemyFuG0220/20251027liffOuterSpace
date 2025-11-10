@@ -15,11 +15,10 @@ const LiffContext = createContext<LiffContextType | undefined>(undefined);
 
 interface LiffProviderProps {
   children: ReactNode;
-  liffId: string;
 }
 
-export const LiffProvider = ({ children, liffId }: LiffProviderProps) => {
-  const liffData = useLiff(liffId);
+export const LiffProvider = ({ children }: LiffProviderProps) => {
+  const liffData = useLiff(process.env.NEXT_PUBLIC_LIFF_ID as string);
 
   return (
     <LiffContext.Provider value={liffData}>{children}</LiffContext.Provider>
